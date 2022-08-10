@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 65.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+}
+
+.root {
+  margin: 20px auto;
+}
+
+.header {
+  font-size: 2.6rem;
+  color: red;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.container {
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.05);
+  position: relative;
+  width: 480px;
+  padding: 20px 40px;
+  height: 520px;
+  /* overflow: hidden; */
+}
+
+.img {
+  width: 284px;
+  animation: ani 0.5s ease-out;
+  transform-origin: 20% 100%;
+  border-radius: 10px;
+}
+
+@keyframes ani {
+  from {
+    opacity: 0;
+    transform: rotate3d(1, 1, 1, 45deg) translate(100%, 50%)
+      matrix3d(
+        0.5,
+        0,
+        -0.866025,
+        0,
+        0.595877,
+        1.2,
+        -1.03209,
+        0,
+        0.866025,
+        0,
+        0.5,
+        0,
+        25.9808,
+        0,
+        15,
+        1
+      )
+      scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: rotate3d(1, 1, 1) scale(1);
+  }
+}
+
+.shose_item,
+.wrap_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrap_item {
+  padding: 0 6px;
+}
+
+.shose_item {
+  width: 80%;
+  transition: left 1s linear;
+  z-index: -1;
+  padding: 0 4px;
+  position: absolute;
+  left: 48px;
+  top: 70px;
+  visibility: hidden;
+  display: none;
+}
+
+.shose_item:nth-child(2) {
+  display: flex;
+  visibility: visible;
+}
+
+.wrap_item {
+  margin-top: 20px;
+  max-width: 400px;
+}
+
+.name {
+  font-size: 1.8rem;
+  color: #ff5f17;
+  margin: 0 0 4px 0;
+  text-align: center;
+  animation: aniName 0.3s ease-out;
+}
+
+.desc {
+  font-size: 1.5rem;
+  color: #050505;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.price {
+  font-size: 1.8rem;
+  margin: 0 0 5px 0;
+  text-align: center;
+  color: rebeccapurple;
+}
+
+.icon {
+  font-size: 2rem;
+  color: aliceblue;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon-left {
+  position: absolute;
+  top: 50%;
+  left: 34px;
+}
+
+.icon-right {
+  position: absolute;
+  top: 50%;
+  right: 34px;
+}
+
+@keyframes aniName {
+  from {
+    opacity: 0;
+    transform: rotate3d(1, 1, 1, 45deg)
+      matrix3d(
+        -0.6,
+        1.34788,
+        0,
+        0,
+        -2.34788,
+        -0.6,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        10,
+        1
+      )
+      translateX(-1000%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate3d(1, 1, 1) scale(1);
+  }
+}
